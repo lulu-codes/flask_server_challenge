@@ -16,9 +16,10 @@ app = Flask(__name__)
 # decorator to connect URL to function: to get current time (in 24hr format)
 @app.route("/current_time/")
 def current_time():
-    current_time = datetime.now()
-    current_time_str = current_time.strftime("%H:%M")
-    return f"<p>{current_time_str}</p>"
+    current_time = datetime.now().strftime("%H:%M")
+    return f"<p>{current_time}</p>"
+    # current_time_str = current_time.strftime("%H:%M")
+    # return f"<p>{current_time_str}</p>"
 
 if __name__ == "__main__":
     app.run(debug=True)
